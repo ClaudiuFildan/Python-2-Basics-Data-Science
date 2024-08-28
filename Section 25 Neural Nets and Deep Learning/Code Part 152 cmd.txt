@@ -1,0 +1,7 @@
+conda activate
+
+cd Desktop
+cd Udemy Course 3
+cd Section 25
+
+tensorboard --logdir logs\fit
