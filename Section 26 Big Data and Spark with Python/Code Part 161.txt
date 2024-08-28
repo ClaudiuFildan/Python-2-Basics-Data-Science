@@ -1,0 +1,84 @@
+wget http://repo.continuum.io/archive/Anaconda3-4.1.1-Linux-x86_64.sh
+
+bash Anaconda3-4.1.1-Linux-x86_64.sh
+
+clear
+
+which python
+
+source .bashrc
+
+python
+
+print('hello')
+
+quit()
+
+clear
+
+jupyter notebook --generate-config
+
+mkdir certs
+
+cd certs 
+
+sudo openssl req -x509 -nodes -days 365 -newkey rsa:1024 -keyout mycert.pem -out mycert.pem
+
+clear 
+
+cd certs
+
+cd ~/.jupyter/
+
+vi jupyter_notebook_config.py
+
+I
+
+
+c=get_config()
+c.NotebookApp.certfile=u'/home/ubuntu/certs/mycert.pem'
+c.NotebookApp.ip='*'
+c.NotebookApp.open_browser=False
+c.NotebookApp.port=8888
+
+//Press Esc
+
+:wq!
+
+jupyter notebook
+
+//Close remote jupyter notebook
+
+sudo apt-get update
+
+cd
+
+clear
+
+sudo apt-get install default-jre
+
+java -version
+
+sudo apt-get install scala
+
+scala -version
+
+export PATH=$PATH:$HOME/anaconda3/bin
+
+conda install pip
+
+which pip
+
+pip install py4j
+
+wget http://apache.mirrors.tds.net/spark/spark-2.0.0/spark-2.0.0-bin-hadoop2.7.tgz
+
+sudo tar -zxvf spark-2.0.0-bin-hadoop2.7.tgz
+
+export SPARK_HOME='/home/ubuntu/spark-2.0.0-bin-hadoop2.7'
+
+export PATH=$SPARK_HOME:$PATH
+
+export PYTHONPATH=$SPARK_HOME/python:$PYTHONPATH
+
+$ jupyter notebook
